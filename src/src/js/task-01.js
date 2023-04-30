@@ -14,15 +14,14 @@
 
 //Category: Technologies
 //Elements: 5
-const list = document.querySelector('#categories')
-const item = list.querySelectorAll('li.item')
-console.log(item)
-const elem1 = item.forEach((elem) => {
-    const title = elem.firstElementChild
-    console.log(title)
-    const elements = elem.lastElementChild.querySelectorAll('li')
-    console.log(elements)
-   // return title, elements
-});
-//console.log(elem1)
+const list = document.querySelector("#categories");
+const item = list.children.length;
+console.log(`Number of categories: ${item}`);
 
+const itemsElement = document.querySelectorAll(".item");
+itemsElement.forEach((elem) => {
+  const title = elem.firstElementChild.textContent;
+  console.log("Category: ", title);
+  const elements = elem.lastElementChild.querySelectorAll("li").length;
+  console.log("Elements: ", elements);
+});
